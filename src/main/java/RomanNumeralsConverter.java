@@ -1,16 +1,22 @@
 public class RomanNumeralsConverter {
 
 
+    RomanNumeralsConverter() {
+    }
 
-    RomanNumeralsConverter(){}
 
+    public String convertToRomanNumeral(int input) {
 
- public String convertToRomanNumeral(int input){
-    String result = "I";
-     result += "I";
+        String result = "I";
 
-    return result;
- }
+        if (input > 1) {
+            result += "I";
+        }
+        if (input > 2){
+            result += "I";
+        }
+        return result;
+    }
 
 
 }

@@ -42,4 +42,19 @@ public class RomanNumeralsConverterTest {
         Assertions.assertEquals(expectedResult, actualResult);
 
     }
+     @Test
+     public void checkCanConvertNumber3ToRomanNumeralIII(){
+
+         //Arrange
+         RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+         int input = 3;
+         String  expectedResult = "III";
+
+         //Act
+         String actualResult = romanNumeralsConverter.convertToRomanNumeral(input);
+
+         //Assert
+         Assertions.assertEquals(expectedResult, actualResult);
+
+     }
 }
