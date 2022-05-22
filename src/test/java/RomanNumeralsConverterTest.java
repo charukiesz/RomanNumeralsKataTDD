@@ -68,11 +68,20 @@ public class RomanNumeralsConverterTest {
 
      @ParameterizedTest
      @CsvSource({"1,I", "2,II",  "3,III",  "4,IV"})
-        public void checkCanConvertNumbersToRomanNumerals(int input, String expectedResult){
+        public void checkCanConvertNumbers1To4ToRomanNumeralsIToIVRespectively(int input, String expectedResult){
         //Arrange
          RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
          //Act and Assert
         Assertions.assertEquals(expectedResult, romanNumeralsConverter.convertToRomanNumeral(input));
      }
+
+    @ParameterizedTest
+    @CsvSource({"5,V", "6,VI",  "7,VII",  "8,VIII"})
+    public void checkCanConvertNumbers5To8ToRomanNumeralsVToVIIIRespectively(int input, String expectedResult){
+        //Arrange
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+        //Act and Assert
+        Assertions.assertEquals(expectedResult, romanNumeralsConverter.convertToRomanNumeral(input));
+    }
 
 }
