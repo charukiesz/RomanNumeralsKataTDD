@@ -1,16 +1,22 @@
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 
 public class RomanNumeralsConverterTest {
 
 
+    @Disabled
     @Test
     public void setUp(){Assertions.assertEquals(true, true);}
 
 
+    @Disabled
     @Test
     public void checkCanConvertNumber1ToRomanNumeralI(){
 
@@ -27,6 +33,7 @@ public class RomanNumeralsConverterTest {
 
     }
 
+    @Disabled
     @Test
     public void checkCanConvertNumber2ToRomanNumeralII(){
 
@@ -42,6 +49,7 @@ public class RomanNumeralsConverterTest {
         Assertions.assertEquals(expectedResult, actualResult);
 
     }
+     @Disabled
      @Test
      public void checkCanConvertNumber3ToRomanNumeralIII(){
 
@@ -57,4 +65,14 @@ public class RomanNumeralsConverterTest {
          Assertions.assertEquals(expectedResult, actualResult);
 
      }
+
+     @ParameterizedTest
+     @CsvSource({"1,I", "2,II",  "3,III",  "4,IV"})
+        public void checkCanConvertNumbersToRomanNumerals(int input, String expectedResult){
+        //Arrange
+         RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+         //Act and Assert
+        Assertions.assertEquals(expectedResult, romanNumeralsConverter.convertToRomanNumeral(input));
+     }
+
 }
