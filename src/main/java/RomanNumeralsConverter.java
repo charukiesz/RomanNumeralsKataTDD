@@ -4,18 +4,11 @@ public class RomanNumeralsConverter {
     RomanNumeralsConverter() {
     }
 
+    private String [] numerals = {"I", "II", "III"};
 
-    public String convertToRomanNumeral(int input) {
+    public String convertToRomanNumeral(int inputNumber) {
 
-        String result = "I";
-
-        if (input > 1) {
-            result += "I";
-        }
-        if (input > 2){
-            result += "I";
-        }
-        return result;
+         return numerals[inputNumber -1];
     }
 
 
