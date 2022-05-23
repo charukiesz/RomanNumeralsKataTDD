@@ -84,4 +84,12 @@ public class RomanNumeralsConverterTest {
         Assertions.assertEquals(expectedResult, romanNumeralsConverter.convertToRomanNumeral(input));
     }
 
+    @ParameterizedTest
+    @CsvSource({"9,IX", "10,X", "11,XI" , "14,XIV", "40,XL",  "44,XLIV"})
+    public void checkCanConvertNumbers9To44ToRomanNumerals(int input, String expectedResult){
+        //Arrange
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+        //Act and Assert
+        Assertions.assertEquals(expectedResult, romanNumeralsConverter.convertToRomanNumeral(input));
+    }
 }
