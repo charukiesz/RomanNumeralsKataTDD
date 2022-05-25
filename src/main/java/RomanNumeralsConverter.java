@@ -1,4 +1,5 @@
 import javax.print.attribute.standard.NumberUp;
+import java.security.InvalidParameterException;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Iterator;
@@ -6,7 +7,7 @@ import java.util.Set;
 
 public class RomanNumeralsConverter {
 
-
+    private static final String INVALIDNUMBER = "Invalid number. Please enter a number between 1 and 3999.";
     RomanNumeralsConverter() {
     }
 
@@ -33,8 +34,10 @@ public class RomanNumeralsConverter {
 
     public String convertToRomanNumeral(int inputNumber) {
 
+        if (inputNumber < 1 || inputNumber >= 4000){
+            throw new InvalidParameterException(INVALIDNUMBER);
+        }
         String romanNumeral = "";
-
 
         for (Integer number : numerals.keySet()) {
             while (inputNumber >= number) {
