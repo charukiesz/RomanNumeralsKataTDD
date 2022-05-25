@@ -11,9 +11,14 @@ public class RomanNumeralsConverter {
     }
 
 
-    // private static HashMap<Integer, String> numerals = new HashMap<Integer, String>() {
     private static LinkedHashMap<Integer, String> numerals = new LinkedHashMap<>() {
         {
+            put(900, "CM");
+            put(500, "D");
+            put(400, "CD");
+            put(100, "C");
+            put(90, "XC");
+            put(50, "L");
             put(40, "XL");
             put(10, "X");
             put(9, "IX");

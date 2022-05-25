@@ -90,4 +90,13 @@ public class RomanNumeralsConverterTest {
         //Act and Assert
         Assertions.assertEquals(expectedResult, romanNumeralsConverter.convertToRomanNumeral(input));
     }
+
+    @ParameterizedTest
+    @CsvSource({"50,L", "90,XC", "100,C", "400,CD", "500,D", "900,CM"})
+    public void checkCanConvertNumbers50To900ToRomanNumerals(int input, String expectedResult){
+        //Arrange
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+        //Act and Assert
+        Assertions.assertEquals(expectedResult, romanNumeralsConverter.convertToRomanNumeral(input));
+    }
 }
