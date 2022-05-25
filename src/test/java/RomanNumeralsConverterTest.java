@@ -99,4 +99,13 @@ public class RomanNumeralsConverterTest {
         //Act and Assert
         Assertions.assertEquals(expectedResult, romanNumeralsConverter.convertToRomanNumeral(input));
     }
+
+    @ParameterizedTest
+    @CsvSource({"1000,M", "846, DCCCXLVI", "1999, MCMXCIX", "2000,MM", "2008,MMVIII", "2056,MMLVI", "3000, MMM", "3999, MMMCMXCIX"})
+    public void checkCanConvertNumbers1000TO3999ToRomanNumerals(int input, String expectedResult){
+        //Arrange
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+        //Act and Assert
+        Assertions.assertEquals(expectedResult, romanNumeralsConverter.convertToRomanNumeral(input));
+    }
 }
